@@ -19,9 +19,21 @@ export const inputAction = (data) => {
   };
 };
 
+// export const fetchAPI = () => {
+//   return async (dispatch) => {
+//     console.log("api");
+//     const response = await axios.get(
+//       "https://jsonplaceholder.typicode.com/users"
+//     );
+//     dispatch({
+//       type: "fetch_api",
+//       payload: response.data,
+//     });
+//   };
+// };
+
 export const fetchAPI = () => {
-  return async (dispatch) => {
-    console.log("api");
+  const data = async (dispatch) => {
     const response = await axios.get(
       "https://jsonplaceholder.typicode.com/users"
     );
@@ -30,4 +42,5 @@ export const fetchAPI = () => {
       payload: response.data,
     });
   };
+  return data();
 };

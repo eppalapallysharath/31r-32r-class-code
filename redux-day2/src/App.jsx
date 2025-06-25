@@ -20,12 +20,12 @@ const App = () => {
 
   return (
     <div>
-      {/* <h1>Redux day 2</h1>
+      <h1>Redux day 2</h1>
       <p>count {count}</p>
       <button onClick={handleInc}> increase number</button>
       <br />
       <br />
-      <p>random number {random}</p> */}
+      <p>random number {random}</p>
       {/* <p>digit: {state.digit}</p> */}
       {/* <button onClick={handleRandomNum}>click to random value</button> */}
 
