@@ -1,12 +1,17 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { loginAction } from "../Redux/Auth/authActions";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
-    alert(`Logged in with: ${email}`);
+    dispatch(loginAction(email, password));
+    navigate("/");
   };
 
   return (

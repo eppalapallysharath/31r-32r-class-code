@@ -1,13 +1,19 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { signupAction } from "../Redux/Auth/authActions";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSignup = (e) => {
     e.preventDefault();
-    alert(`Account created for: ${name}`);
+    dispatch(signupAction(email, name, password));
+    navigate("/login");
   };
 
   return (
